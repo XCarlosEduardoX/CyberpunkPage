@@ -181,7 +181,6 @@
         }
     });
 
-    let isPlayingAudio = false;
     const audios = {
         "cyberpunk-section": new Audio(URL_SONG_CYBERPUNK) as HTMLAudioElement,
         "edgerunners-section": new Audio(
@@ -193,6 +192,8 @@
     };
     let currentNameAudio = "";
     let listeningToAudio = false;
+    let isPlayingAudio = false;
+    let currentSection = "";
 
     window.onscroll = () => {
         var navbar = document.getElementById("navbar");
@@ -211,49 +212,94 @@
                 Math.min(windowHeight, rect.top + section.clientHeight) -
                 Math.max(0, rect.top);
             if ((visibleHeight / section.clientHeight) * 100 >= 30) {
-                const currentSection =
+                const currentSectionActive =
                     section.getAttribute("id") || "cyberpunk-section";
-                console.log(currentSection);
+                currentSection = currentSectionActive;
                 if (listeningToAudio) {
                     isPlayingAudio = true;
-                    playSong(currentSection);
+                    playSong(currentSectionActive);
                 }
             }
         });
     };
 
-    let currentSection = "cyberpunk-section";
-
     function toggleAudio() {
         listeningToAudio = !listeningToAudio;
-        isPlayingAudio = listeningToAudio;
-        if (!listeningToAudio) pauseAllAudios();
-        else playSong(currentSection);
+        if (!listeningToAudio) {
+            isPlayingAudio = false;
+            pauseAllAudios();
+
+            // isPlayingAudio = false;
+            // audios[currentSection as keyof typeof audios].pause();
+        } else {
+            if (currentSection != "") {
+                isPlayingAudio = true;
+                playSong(currentSection);
+            } else {
+                currentSection = "cyberpunk-section";
+                isPlayingAudio = true;
+                playSong(currentSection);
+            }
+            // if (currentSection != "") {
+            //     isPlayingAudio = true;
+            //     playSong(currentSection);
+            // } else {
+            //     currentSection = "cyberpunk-section";
+            //     isPlayingAudio = true;
+            //     playSong(currentSection);
+            // }
+        }
     }
 
     function playSong(section: string) {
-        if (currentNameAudio !== section) {
+        if (currentNameAudio != section) {
             pauseAllAudios();
+            isPlayingAudio = true;
             audios[section as keyof typeof audios].play();
             audios[section as keyof typeof audios].loop = true;
             currentNameAudio = section;
+            changeIconAudio("play");
+        } else if (currentNameAudio == section) {
+            isPlayingAudio = true;
+            audios[section as keyof typeof audios].play();
+            audios[section as keyof typeof audios].loop = true;
+            currentNameAudio = section;
+            changeIconAudio("play");
         }
-        changeIconAudio();
     }
 
     function pauseAllAudios() {
+        isPlayingAudio = false;
         Object.values(audios).forEach((audio) => audio.pause());
+        changeIconAudio("pause");
     }
 
-    function changeIconAudio() {
+    function changeIconAudio(state: "play" | "pause") {
         const btnPlay = document.getElementById("btn-play");
-        if (btnPlay) {
-            btnPlay.style.display = isPlayingAudio ? "none" : "block";
+        const btnPause = document.getElementById("btn-pause");
+       
+        if (state == "play") {
+            if (btnPlay) {
+                btnPlay.style.display = "none";
+            }
+            if (btnPause) {
+                btnPause.style.display = "block";
+            }
+        } else if (state == "pause") {
+            if (btnPlay) {
+                btnPlay.style.display = "block";
+            }
+            if (btnPause) {
+                btnPause.style.display = "none";
+            }
         }
 
-        const btnPause = document.getElementById("btn-pause");
-        if (btnPause) {
-            btnPause.style.display = isPlayingAudio ? "block" : "none";
-        }
+        // if (btnPlay) {
+        //     btnPlay.style.display = isPlayingAudio ? "none" : "block";
+        // }
+
+        // if (btnPause) {
+        //     btnPause.style.display = isPlayingAudio ? "block" : "none";
+        // }
     }
 </script>
