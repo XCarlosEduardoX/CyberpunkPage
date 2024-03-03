@@ -10,8 +10,14 @@ const { urlImage, urlVideo, nameSection } = Astro.props;
 
 <div class="video-section">
     <canvas id=`canvas-${nameSection}` class="blur-canvas"></canvas>
-    <video autoplay muted loop id=`video-${nameSection}`>
-        <source src={urlVideo} type="video/mp4" />
+    <video
+        autoplay
+        muted
+        loop
+        id=`video-${nameSection}`
+        playsinline="playsinline"
+    >
+        <source src={urlVideo} type="video/mp4; codecs=av01.0.05M.08" />
     </video>
     <div class="image-logo">
         <img class="" src={urlImage} alt="logo" />
