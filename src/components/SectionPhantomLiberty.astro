@@ -1,0 +1,72 @@
+---
+import { URL_VIDEO_PHANTOMLIBERTY } from "../constants/urls";
+import VideoSection from "../components/VideoSection.astro";
+---
+
+<section
+    class="box-phantomliberty-section"
+    id="phantomliberty-section"
+    style="position: relative;"
+>
+    <VideoSection
+        nameSection="phantomliberty"
+        urlVideo={URL_VIDEO_PHANTOMLIBERTY}
+        urlImage="/images/cyberpunk_2077_phantom_liberty.png"
+    /><div class="mx-10">
+        <div class="first-text">
+            <p>
+                Phantom Liberty es una nueva aventura de suspense y espionaje
+                para Cyberpunk 2077. Vuelve a meterte en la piel de V, merc con
+                mejoras cibernéticas, y embárcate en una intrigante misión de
+                espionaje de altos vuelos para salvar a la presidenta de los
+                Nuevos Estados Unidos. En el peligroso distrito de Dogtown,
+                tendrás que forjar alianzas dentro de una red de traiciones e
+                intrigas políticas. ¿Tienes lo que hay que tener para
+                sobrevivir?
+            </p>
+        </div>
+    </div>
+</section>
+<style>
+    .box-edgerunners-section,
+    .box-cyberpunk-section,
+    .box-phantomliberty-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+    .mx-10 {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .first-text {
+        color: white;
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 900;
+    }
+    .first-text p {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem;
+        text-align: center;
+        line-height: 1.1;
+        font-weight: 500;
+        color: white;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+        .first-text p {
+            font-size: 1.5rem !important;
+            line-height: normal;
+        }
+    }
+</style>

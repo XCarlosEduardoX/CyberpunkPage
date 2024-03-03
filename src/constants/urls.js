@@ -1,0 +1,6 @@
+export const URL_VIDEO_CYBERPUNK = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-cyberpunk2077.mp4?alt=media&token=97f257a1-6573-4617-800e-db491b7fadf3'
+export const URL_VIDEO_EDGERUNNERS = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-edgerunners.mp4?alt=media&token=9151edab-4c41-4040-89a3-441bb39e8492'
+export const URL_VIDEO_PHANTOMLIBERTY = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-phantomliberty.mp4?alt=media&token=d929a26f-0b9d-4e79-9358-90a719ec5345'
+export const URL_SONG_CYBERPUNK = "https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/song-cyberpunk.mp3?alt=media&token=d1357d78-5978-4180-9a8d-ddef7dfddf89";
+export const URL_SONG_EDGERUNNERS = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/song-edgerunners.mp3?alt=media&token=57a1232e-eab5-4e72-92b2-c6a5fd4841c7'
+export const URL_SONG_PHANTOMLIBERTY = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/song-phantomliberty.mp3?alt=media&token=110d29c2-ea40-4b1b-b7ec-747b09f865a6'
