@@ -156,6 +156,13 @@
             transform: translate(0);
         }
     }
+
+    @media (max-width: 450px) {
+        a {
+            font-size: 0.8rem;
+            padding: 0.8rem 1rem !important;
+        }
+    }
 </style>
 
 <script>
@@ -277,7 +284,7 @@
     function changeIconAudio(state: "play" | "pause") {
         const btnPlay = document.getElementById("btn-play");
         const btnPause = document.getElementById("btn-pause");
-       
+
         if (state == "play") {
             if (btnPlay) {
                 btnPlay.style.display = "none";

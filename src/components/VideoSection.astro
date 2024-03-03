@@ -61,6 +61,21 @@ const { urlImage, urlVideo, nameSection } = Astro.props;
         align-items: center;
         position: absolute;
     }
+
+    @media screen and (max-width: 480px) {
+        .video-section .image-logo {
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 80%;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .video-section .image-logo {
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+        }
+    }
 </style>
 
 <script>
