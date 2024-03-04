@@ -4,7 +4,7 @@ import VideoSection from "../components/VideoSection.astro";
 ---
 
 <section
-    class="box-edgerunners-section"
+    class="box-edgerunners-section fadein"
     id="edgerunners-section"
     style="position: relative;"
 >
@@ -25,9 +25,17 @@ import VideoSection from "../components/VideoSection.astro";
     </div>
 </section>
 <style>
-    .box-edgerunners-section,
-    .box-cyberpunk-section,
-    .box-phantomliberty-section {
+    .fadein {
+        opacity: 0;
+        transition: all 0.5s;
+        transform: translate(0, 200px);
+    }
+
+    .fadein.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    .box-edgerunners-section {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -67,3 +75,5 @@ import VideoSection from "../components/VideoSection.astro";
         }
     }
 </style>
+
+<script></script>

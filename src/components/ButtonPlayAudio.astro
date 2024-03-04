@@ -199,18 +199,25 @@
     };
     let currentNameAudio = "";
     let listeningToAudio = false;
-    let isPlayingAudio = false;
     let currentSection = "";
 
     window.onscroll = () => {
         var navbar = document.getElementById("navbar");
         if (navbar) {
-            if (window.scrollY > 100) {
-                navbar.style.backdropFilter = "blur(40px)";
+            if (window.scrollY > 0) {
+                //agregar tiempo de transicion
+
+
+                navbar.style.backdropFilter = "blur(23px)";
+                navbar.style.filter = "saturate(4.5)";
             } else {
                 navbar.style.backdropFilter = "none";
+                navbar.style.filter = "none";
+
             }
         }
+
+        fadeInEffect();
 
         const windowHeight = window.innerHeight;
         document.querySelectorAll("section").forEach((section) => {
@@ -223,28 +230,40 @@
                     section.getAttribute("id") || "cyberpunk-section";
                 currentSection = currentSectionActive;
                 if (listeningToAudio) {
-                    isPlayingAudio = true;
                     playSong(currentSectionActive);
                 }
             }
         });
     };
 
+    function fadeInEffect() {
+        const windowHeight = window.innerHeight;
+
+        document.querySelectorAll(".fadein").forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const visibleHeight =
+                Math.min(windowHeight, rect.top + section.clientHeight) -
+                Math.max(0, rect.top);
+            if ((visibleHeight / section.clientHeight) * 100 >= 30) {
+                section.classList.add("visible");
+            } else {
+                section.classList.remove("visible");
+            }
+        });
+    }
+
     function toggleAudio() {
         listeningToAudio = !listeningToAudio;
         if (!listeningToAudio) {
-            isPlayingAudio = false;
             pauseAllAudios();
 
             // isPlayingAudio = false;
             // audios[currentSection as keyof typeof audios].pause();
         } else {
             if (currentSection != "") {
-                isPlayingAudio = true;
                 playSong(currentSection);
             } else {
                 currentSection = "cyberpunk-section";
-                isPlayingAudio = true;
                 playSong(currentSection);
             }
             // if (currentSection != "") {
@@ -261,13 +280,11 @@
     function playSong(section: string) {
         if (currentNameAudio != section) {
             pauseAllAudios();
-            isPlayingAudio = true;
             audios[section as keyof typeof audios].play();
             audios[section as keyof typeof audios].loop = true;
             currentNameAudio = section;
             changeIconAudio("play");
         } else if (currentNameAudio == section) {
-            isPlayingAudio = true;
             audios[section as keyof typeof audios].play();
             audios[section as keyof typeof audios].loop = true;
             currentNameAudio = section;
@@ -276,7 +293,6 @@
     }
 
     function pauseAllAudios() {
-        isPlayingAudio = false;
         Object.values(audios).forEach((audio) => audio.pause());
         changeIconAudio("pause");
     }
