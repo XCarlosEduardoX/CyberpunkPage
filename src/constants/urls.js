@@ -5,3 +5,8 @@ export const URL_SONG_CYBERPUNK = "https://firebasestorage.googleapis.com/v0/b/c
 export const URL_SONG_EDGERUNNERS = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/song-edgerunners.mp3?alt=media&token=57a1232e-eab5-4e72-92b2-c6a5fd4841c7'
 export const URL_SONG_PHANTOMLIBERTY = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/song-phantomliberty.mp3?alt=media&token=110d29c2-ea40-4b1b-b7ec-747b09f865a6'
 export const URL_FINAL_VIDEO = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/final-video.mp4?alt=media&token=1f0c508b-1b79-4405-9db8-21689aef07dc'
+export const URL_VIDEO_TRAILER1 = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/video-js.mp4?alt=media&token=8985866e-0528-4c03-b54d-07cd19aa8034'
+export const URL_VIDEO_TRAILER2 = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-2.mp4?alt=media&token=e327a242-dfe9-4cad-9f09-168aa8f70119'
+export const URL_VIDEO_TRAILER3 = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-3.mp4?alt=media&token=0bb81e75-b452-45c2-bbd1-472229dcb57e'
+export const URL_VIDEO_TRAILER4 = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-4.mp4?alt=media&token=a7e80cdb-2dbc-440a-95c6-4083254cc068'
+export const URL_VIDEO_TRAILER5 = 'https://firebasestorage.googleapis.com/v0/b/cyberpunkpage.appspot.com/o/trailer-5.mp4?alt=media&token=865ea888-5c34-469c-bde9-fac9eb085189'

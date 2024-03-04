@@ -1,6 +1,15 @@
 ---
 import { URL_VIDEO_CYBERPUNK } from "../constants/urls";
 import VideoSection from "../components/VideoSection.astro";
+import Cover from "../components/Cover.astro";
+import BentoGrid from "../components/BentoGrid.astro";
+import {
+    URL_VIDEO_TRAILER1,
+    URL_VIDEO_TRAILER2,
+    URL_VIDEO_TRAILER3,
+    URL_VIDEO_TRAILER4,
+    URL_VIDEO_TRAILER5,
+} from "../constants/urls";
 ---
 
 <section
@@ -24,6 +33,19 @@ import VideoSection from "../components/VideoSection.astro";
             </p>
         </div>
     </div>
+
+    <!-- <Cover
+        urlImage="/images/covers/cover_cyberpunk.jpg"
+        nameSection="cyberpunk"
+    /> -->
+    <BentoGrid
+        urlVideo1={URL_VIDEO_TRAILER1}
+        urlVideo2={URL_VIDEO_TRAILER2}
+        urlVideo3={URL_VIDEO_TRAILER3}
+        urlVideo4={URL_VIDEO_TRAILER4}
+        urlVideo5={URL_VIDEO_TRAILER5}
+    />
+    <div class="" style="height:50vh"></div>
 </section>
 <style>
     .box-edgerunners-section,

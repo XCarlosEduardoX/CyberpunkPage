@@ -1,0 +1,265 @@
+---
+interface Props {
+    nameSection: string;
+    urlImage: string;
+}
+
+const { nameSection } = Astro.props;
+---
+
+<section class="cover" id=`${nameSection}-section`>
+    <div class="relative"></div>
+</section>
+
+<style>
+    .cover {
+        width: 100%;
+    }
+
+    .cover p {
+        color: white;
+    }
+    .img {
+        max-width: 180%;
+        height: auto;
+    }
+
+   
+
+    .intro__header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 744px;
+        padding: 0 0 46px;
+        text-align: center;
+    }
+
+    @media (max-width: 767.9px) {
+        .intro__header {
+            padding: 0 0 32px;
+        }
+    }
+
+    .intro__separator-top {
+        background-image: linear-gradient(
+                90deg,
+                #000 28px,
+                #fcee0a 0,
+                #fcee0a calc(50% - 14px),
+                #000 calc(50% - 14px),
+                #000 calc(50% + 14px),
+                #fcee0a calc(50% + 14px),
+                #fcee0a calc(100% - 28px),
+                #000 calc(100% - 28px),
+                #000
+            ),
+            linear-gradient(
+                90deg,
+                #000 2px,
+                #fcee0a 0,
+                #fcee0a calc(50% - 1px),
+                #000 calc(50% - 1px),
+                #000 calc(50% + 1px),
+                #fcee0a calc(50% + 1px),
+                #fcee0a calc(100% - 2px),
+                #000 calc(100% - 2px),
+                #000
+            );
+        background-repeat: no-repeat;
+        background-size:
+            100% 2px,
+            100% 28px;
+        height: 28px;
+        margin-top: 40px;
+        width: 47.2916666667vw;
+    }
+
+    @media (max-width: 1199px) {
+        .intro__separator-top {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        .intro__separator-top {
+            background-image: linear-gradient(
+                    90deg,
+                    #000 28px,
+                    #fcee0a 0,
+                    #fcee0a calc(100% - 28px),
+                    #000 calc(100% - 28px),
+                    #000
+                ),
+                linear-gradient(
+                    90deg,
+                    #000 2px,
+                    #fcee0a 0,
+                    #fcee0a calc(100% - 2px),
+                    #000 calc(100% - 2px),
+                    #000
+                );
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+
+    .intro__separator-bottom {
+        background-image: linear-gradient(
+                90deg,
+                #000 2px,
+                #fcee0a 0,
+                #fcee0a calc(50% - 1px),
+                #000 calc(50% - 1px),
+                #000 calc(50% + 1px),
+                #fcee0a calc(50% + 1px),
+                #fcee0a calc(100% - 2px),
+                #000 calc(100% - 2px),
+                #000
+            ),
+            linear-gradient(
+                90deg,
+                #000 28px,
+                #fcee0a 0,
+                #fcee0a calc(50% - 14px),
+                #000 calc(50% - 14px),
+                #000 calc(50% + 14px),
+                #fcee0a calc(50% + 14px),
+                #fcee0a calc(100% - 28px),
+                #000 calc(100% - 28px),
+                #000
+            );
+        background-repeat: no-repeat;
+        background-size:
+            100% 26px,
+            100% 28px;
+        height: 28px;
+        margin-top: 40px;
+        width: 47.2916666667vw;
+    }
+
+    @media (max-width: 1199px) {
+        .intro__separator-bottom {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        .intro__separator-bottom {
+            background-image: linear-gradient(
+                    90deg,
+                    #000 2px,
+                    #fcee0a 0,
+                    #fcee0a calc(100% - 2px),
+                    #000 calc(100% - 2px),
+                    #000
+                ),
+                linear-gradient(
+                    90deg,
+                    #000 28px,
+                    #fcee0a 0,
+                    #fcee0a calc(100% - 28px),
+                    #000 calc(100% - 28px),
+                    #000
+                );
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    let characters = [
+        {
+            name: "Valerie 'V'",
+            urlImage:
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7f69a0b6-e8ff-43a0-8b23-0094b917323c/df0q4nz-b926004b-a31d-4fe4-aac1-c8f688507e0f.png/v1/fill/w_869,h_919/valerie__v__render__cyberpunk_2077__by_bumbleboss_df0q4nz-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM1NCIsInBhdGgiOiJcL2ZcLzdmNjlhMGI2LWU4ZmYtNDNhMC04YjIzLTAwOTRiOTE3MzIzY1wvZGYwcTRuei1iOTI2MDA0Yi1hMzFkLTRmZTQtYWFjMS1jOGY2ODg1MDdlMGYucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Z4P-J1HYLwD2-xH6j5kfzkw06WjlrQ56_VraYokbr1k",
+            description: `Valerie, también conocida como V, es la protagonista principal en el videojuego Cyberpunk 2077¹. Es una mercenaria involucrada en una serie de eventos singulares durante el año 2077, que alteraron el equilibrio de poder en Night City¹.
+Dependiendo de la ruta de vida que elijas durante la personalización del personaje, el prólogo del juego y la historia de fondo de V cambiarán en consecuencia¹. V es un ex miembro del clan Bakker que los abandona cuando se unen a la mayor Snake Nation¹.
+
+V es conocida por su intelecto dotado, estrategia maestra, habilidades de hacker, ingeniería experta y una vasta red de contactos¹. Además, V tiene una condición física humana máxima (base), es una experta artista marcial y tiene dominio de las armas¹.
+El nombre real de V es Vincent para V masculino y Valerie para V femenino, pero solo aquellos cercanos a V la llaman por su nombre completo.`,
+        },
+        {
+            name: "Johnny Silverhand",
+            urlImage:
+                "https://www.giantbomb.com/a/uploads/scale_small/3/34651/3376891-johnnysilverhand.png",
+            description: `Robert John Linder[1], más tarde conocido como Johnny
+                    Silverhand fue un roquero legendario muy influenciante en el
+                    amanecer del siglo 21, conocido por ser el líder y
+                    cofundador de la banda Samurai. Tan egocéntrico y
+                    carismático como fue, Silverhand definió el movimiento
+                    roquero por lo que es conocido hoy en día, dedicando su
+                    enfoque en contra del gobierno corrupto de los Estados
+                    Unidos y las megacorporaciones. Johnny se convirtió en
+                    legenda de Night City al ver su perdición bajo las manos de
+                    Adam Smasher en la Torre Arasaka para después convertirse en
+                    una víctima del Almicida el 20 de agosto de 2023. Medio
+                    siglo después, en el año 2077, el engrama de Johnny se
+                    activó en la mente de V tras este introducirse el Relic
+                    donde él residía. Conservando su odio hacia Arasaka y
+                    deseoso de vengarse de su archienemigo Smasher, decide
+                    unirse a V para ayudarle a extirparse el Relic, y a su vez,
+                    destruir a Arasaka y su prisión de engramas Mikoshi. La
+                    "conciencia" de Johnny no es realmente su conciencia, es
+                    únicamente su personalidad digitalizada.`,
+        },
+        {
+            name: "Jackie Welles",
+            urlImage:
+                "https://static.wikia.nocookie.net/p__/images/7/7c/JackieWelles_Database_CP2077.webp/revision/latest?cb=20221211065958&path-prefix=protagonist",
+            description: `Siendo joven, Jackie se unió a la banda de los Valentinos, pero se marchó años después cuando su madre se enteró. Siempre ha querido ser su propio jefe, así que decidió hacerse mercenario. Amistad, lealtad y familia son lo que le guían. Para Jackie, la sangre es lo que más pesa. Es un mercenario profesional que respeta a la gente del gremio. Pero también quiere mantener a su familia y vivir con comodidades, pero se está impacientando porque sigue siendo un elusivo sueño.`,
+        },
+        {
+            name: "Adam Smasher",
+            urlImage: "https://www.google.com",
+
+            description: "The fourth character",
+        },
+    ];
+
+    for (let i = 0; i < characters.length; i++) {
+        let character = characters[i];
+        let div = document.createElement("div");
+        div.className =
+            "pl-20 sticky top-0 h-screen flex flex-row justify-center bg-[#fcee0a]";
+
+        div.innerHTML += `
+
+    <div class="flex flex-col items-start justify-center w-1/2">
+
+        <h2 class="title text-8xl md:text-6xl sm:text-4xl mb-10 font-extrabold">${character.name}</h2>
+        <p class="description text-2xl md:text-xl sm:text-lg font-bold">
+            ${character.description}
+        </p>
+    </div>
+    <div class="flex flex-col items-center justify-center w-1/2 ">
+
+        <img
+            class="h-100 object-cover"
+            src="${character.urlImage}"
+            alt="image"
+        />
+    </div>
+`;
+
+        //poner el titulo y la descripcion en blanco
+        const titleElement = div.querySelector(".title");
+        if (titleElement !== null) {
+            const titleElement = div.querySelector(".title") as HTMLElement;
+            titleElement.style.color = "black";
+        }
+        const descriptionElement = div.querySelector(".description");
+        if (descriptionElement !== null) {
+            const descriptionElement = div.querySelector(
+                ".description",
+            ) as HTMLElement;
+            descriptionElement.style.color = "black";
+        }
+
+        const relativeElement = document.querySelector(".relative");
+        if (relativeElement !== null) {
+            relativeElement.appendChild(div);
+        }
+    }
+</script>
