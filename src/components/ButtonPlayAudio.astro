@@ -207,13 +207,11 @@
             if (window.scrollY > 0) {
                 //agregar tiempo de transicion
 
-
                 navbar.style.backdropFilter = "blur(23px)";
                 navbar.style.filter = "saturate(4.5)";
             } else {
                 navbar.style.backdropFilter = "none";
                 navbar.style.filter = "none";
-
             }
         }
 
@@ -225,7 +223,7 @@
             const visibleHeight =
                 Math.min(windowHeight, rect.top + section.clientHeight) -
                 Math.max(0, rect.top);
-            if ((visibleHeight / section.clientHeight) * 100 >= 30) {
+            if ((visibleHeight / section.clientHeight) * 100 >= 20) {
                 const currentSectionActive =
                     section.getAttribute("id") || "cyberpunk-section";
                 currentSection = currentSectionActive;

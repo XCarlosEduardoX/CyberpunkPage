@@ -28,6 +28,16 @@ import VideoSection from "../components/VideoSection.astro";
     </div>
 </section>
 <style>
+    .fadein {
+        opacity: 0;
+        transition: all 0.5s;
+        transform: translate(0, 200px);
+    }
+
+    .fadein.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
     .box-edgerunners-section,
     .box-cyberpunk-section,
     .box-phantomliberty-section {

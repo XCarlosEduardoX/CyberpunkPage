@@ -13,7 +13,7 @@ import {
 ---
 
 <section
-    class="box-cyberpunk-section"
+    class="box-cyberpunk-section fadein"
     id="cyberpunk-section"
     style="position: relative;"
 >
@@ -24,29 +24,48 @@ import {
     />
     <div class="mx-10">
         <div class="first-text">
-            <p>
+            <div class="glitch"></div>
+            <p id="text-one">
                 Ponte en la piel de V, merc ciberpunk a sueldo, y haz todo lo
                 que sea necesario para hacerte un nombre en Night City, una
                 megalópolis obsesionada con el poder, el glamur y las
                 modificaciones corporales. Aquí nacen las leyendas. ¿Cuál será
                 la tuya?
             </p>
+            <p id="text-two">
+                Cyberpunk 2077 es una historia de acción y aventura en mundo
+                abierto que se desarrolla en Night City, una megalópolis
+                obsesionada con el poder, el glamur y las modificaciones
+                corporales. Te pondrás en la piel de V, un mercenario
+                cibermejorado que persigue un implante único que permite
+                alcanzar la inmortalidad. Podrás personalizar las mejoras
+                cibernéticas, las habilidades y el estilo de juego del
+                personaje, explorar un vasto mundo abierto y tomar decisiones
+                que desencadenarán la historia y darán forma al mundo que te
+                rodea.
+            </p>
         </div>
     </div>
-
-    <!-- <Cover
-        urlImage="/images/covers/cover_cyberpunk.jpg"
-        nameSection="cyberpunk"
-    /> -->
     <BentoGrid
         urlVideo1={URL_VIDEO_TRAILER1}
+        ,
         urlVideo2={URL_VIDEO_TRAILER2}
+        ,
         urlVideo3={URL_VIDEO_TRAILER3}
+        ,
         urlVideo4={URL_VIDEO_TRAILER4}
+        ,
         urlVideo5={URL_VIDEO_TRAILER5}
     />
 </section>
 <style>
+    section {
+        overflow: hidden;
+    }
+    #text-two {
+        display: none;
+    }
+
     .box-edgerunners-section,
     .box-cyberpunk-section,
     .box-phantomliberty-section {
@@ -62,7 +81,6 @@ import {
         margin-right: 10%;
     }
     .first-text {
-        color: white;
         width: 100%;
         height: 80vh;
         display: flex;
@@ -72,16 +90,58 @@ import {
         position: relative;
         z-index: 900;
     }
+
+    .glitch {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
     .first-text p {
         font-size: 2.5rem !important;
         margin-bottom: 1rem;
         text-align: center;
         line-height: 1.1;
         font-weight: 500;
-        color: white;
+        color: #e14148;
         letter-spacing: 1px;
+        text-shadow: 0 0 10px #e14148;
     }
 
+    @keyframes wiggle {
+        0% {
+            -webkit-transform: skewX(24deg);
+        }
+        10% {
+            -webkit-transform: skewX(-8deg);
+        }
+        20% {
+            -webkit-transform: skewX(55deg);
+        }
+        30% {
+            -webkit-transform: skewX(-90deg);
+        }
+        40% {
+            -webkit-transform: skewX(29deg);
+        }
+        50% {
+            -webkit-transform: skewX(-90deg);
+        }
+        60% {
+            -webkit-transform: skewX(3deg);
+        }
+        70% {
+            -webkit-transform: skewX(-2deg);
+        }
+        80% {
+            -webkit-transform: skewX(1deg);
+        }
+        90% {
+            -webkit-transform: skewX(10deg);
+        }
+        100% {
+            -webkit-transform: skewX(0deg);
+        }
+    }
     @media (max-width: 768px) {
         .first-text p {
             font-size: 1.5rem !important;
@@ -89,3 +149,18 @@ import {
         }
     }
 </style>
+
+<script>
+    //contar 10 segundos
+    setTimeout(() => {
+        const textOneElement = document.getElementById("text-one");
+        if (textOneElement) {
+            textOneElement.style.display = "none";
+        }
+        const textTwoElement = document.getElementById("text-two");
+        if (textTwoElement) {
+            textTwoElement.style.display = "block";
+            textTwoElement.style.animation = "wiggle 0.4s";
+        }
+    }, 5000);
+</script>

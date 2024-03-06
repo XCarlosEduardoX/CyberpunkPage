@@ -6,6 +6,11 @@ interface Props {
 }
 
 const { urlImage, urlVideo, nameSection } = Astro.props;
+
+console.log(urlImage, urlVideo, nameSection);
+
+
+
 ---
 
 <div class="video-section">
@@ -85,6 +90,8 @@ const { urlImage, urlVideo, nameSection } = Astro.props;
 </style>
 
 <script>
+
+
     //obtener la propiedad name del componente
 
     var canvas1 = document.getElementById("canvas-cyberpunk");
