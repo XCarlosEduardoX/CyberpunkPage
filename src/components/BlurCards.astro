@@ -1,0 +1,173 @@
+<div class="w-11/12 zindex">
+    <div class="flex flex-wrap">
+        <div
+            class="w-full sm:w-1/2 md:w-1/4 h-full card product_content"
+            id="card1"
+        >
+            <img
+                src="https://www.cyberpunk.net/build/images/home8/product-cp77@1x-5cf31fe8.jpg"
+                alt=""
+            />
+            <div class="icon">
+                <img src="/images/Cyberpunk_2077_logo.svg" alt="" />
+            </div>
+        </div>
+        <div
+            class="w-full sm:w-1/2 md:w-1/4 h-full card product_content"
+            id="card2"
+        >
+            <img
+                src="https://www.cyberpunk.net/build/images/home8/product-phantomliberty-final@1x-1080ee25.jpg"
+                alt=""
+            /><div class="icon">
+                <img src="/images/cyberpunk_2077_phantom_liberty.webp" alt="" />
+            </div>
+        </div>
+        <div
+            class="w-full sm:w-1/2 md:w-1/4 h-full card product_content"
+            id="card3"
+        >
+            <img
+                src="https://www.cyberpunk.net/build/images/home8/product-edgerunners@1x-6f888a59.jpg"
+                alt=""
+            /><div class="icon">
+                <img src="/images/Cyberpunk_Edgerunners_logo.png" alt="" />
+            </div>
+        </div>
+        <div
+            class="w-full sm:w-1/2 md:w-1/4 h-full card product_content"
+            id="card4"
+        >
+            <img
+                src="https://www.cyberpunk.net/build/images/home8/product-gear@1x-ec02a9d0.jpg"
+                alt=""
+            />
+        </div>
+    </div>
+</div>
+
+<style>
+    .zindex {
+        z-index: 999;
+    }
+    .product_content {
+        background: red;
+        border-color: #000;
+        border-style: solid;
+        border-width: 8px 4px;
+        display: block;
+        position: relative;
+    }
+
+    .icon {
+        left: 0;
+        margin: 0 auto;
+        padding: 0 25px;
+        position: absolute;
+        right: 0;
+        top: 44.6428571429%;
+    }
+
+    .product_image,
+    .product_logo {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .card:hover {
+        transform: scale(1.01);
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .card {
+        filter: blur(0px);
+        transition: filter 0.2s;
+
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        );
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<script>
+    //si el usuario pasa el mouse por encima de la imagen, la imagen se agranda y los demas se ponen en blur
+    const card1 = document.getElementById("card1") as HTMLDivElement;
+    const card2 = document.getElementById("card2") as HTMLDivElement;
+    const card3 = document.getElementById("card3") as HTMLDivElement;
+    const card4 = document.getElementById("card4") as HTMLDivElement;
+
+    card1.addEventListener("mouseover", () => {
+        card1.style.filter = "blur(0px)";
+        card2.style.filter = "blur(3px)";
+        card3.style.filter = "blur(3px)";
+        card4.style.filter = "blur(3px)";
+    });
+
+    card1.addEventListener("click", () => {
+        window.location.href = "/Cyberpunk2077";
+    });
+
+    card2.addEventListener("mouseover", () => {
+        card2.style.filter = "blur(0px)";
+        card1.style.filter = "blur(3px)";
+        card3.style.filter = "blur(3px)";
+        card4.style.filter = "blur(3px)";
+    });
+    card3.addEventListener("click", () => {
+        window.location.href = "/Edgerunners/";
+    });
+    card3.addEventListener("mouseover", () => {
+        card3.style.filter = "blur(0px)";
+        card1.style.filter = "blur(3px)";
+        card2.style.filter = "blur(3px)";
+        card4.style.filter = "blur(3px)";
+    });
+    card2.addEventListener("click", () => {
+        window.location.href = "/Phantomliberty/";
+    });
+
+    card4.addEventListener("mouseover", () => {
+        card4.style.filter = "blur(0px)";
+        card1.style.filter = "blur(3px)";
+        card2.style.filter = "blur(3px)";
+        card3.style.filter = "blur(3px)";
+    });
+
+    //si el usuario quita el mouse de la imagen, la imagen vuelve a su tamaño original y los demas se quitan el blur
+    card1.addEventListener("mouseout", () => {
+        card1.style.filter = "blur(0px)";
+        card2.style.filter = "blur(0px)";
+        card3.style.filter = "blur(0px)";
+        card4.style.filter = "blur(0px)";
+    });
+
+    card2.addEventListener("mouseout", () => {
+        card2.style.filter = "blur(0px)";
+        card1.style.filter = "blur(0px)";
+        card3.style.filter = "blur(0px)";
+        card4.style.filter = "blur(0px)";
+    });
+
+    card3.addEventListener("mouseout", () => {
+        card3.style.filter = "blur(0px)";
+        card1.style.filter = "blur(0px)";
+        card2.style.filter = "blur(0px)";
+        card4.style.filter = "blur(0px)";
+    });
+
+    card4.addEventListener("mouseout", () => {
+        card4.style.filter = "blur(0px)";
+        card1.style.filter = "blur(0px)";
+        card2.style.filter = "blur(0px)";
+        card3.style.filter = "blur(0px)";
+    });
+</script>

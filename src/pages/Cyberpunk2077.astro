@@ -1,0 +1,20 @@
+---
+import SectionCyberpunk from "../components/SectionCyberpunk.astro";
+import Layout from "./../layouts/Layout.astro";
+import Navbar from "./../components/Navbar.astro";
+import Footer from "./../components/Footer.astro";
+---
+
+<Layout title="Cyberpunk20777">
+    <Navbar />
+
+    <SectionCyberpunk />
+    <Footer />
+</Layout>
+<script>
+    import { usePlayerStore } from "../store/playerStore.js";
+
+    usePlayerStore.setState({
+        currentMusic: "cyberpunk2077",
+    });
+</script>

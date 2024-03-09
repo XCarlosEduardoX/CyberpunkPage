@@ -1,0 +1,21 @@
+---
+import SectionPhantomLiberty from "../components/SectionPhantomLiberty.astro";
+
+import Layout from "./../layouts/Layout.astro";
+import Navbar from "./../components/Navbar.astro";
+import Footer from "./../components/Footer.astro";
+---
+
+<Layout title="Phantom Liberty">
+    <Navbar />
+    <SectionPhantomLiberty />
+    <Footer />
+</Layout>
+
+<script>
+    import { usePlayerStore } from "../store/playerStore.js";
+
+    usePlayerStore.setState({
+        currentMusic: "phantomliberty",
+    });
+</script>
